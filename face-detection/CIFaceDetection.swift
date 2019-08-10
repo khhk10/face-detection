@@ -11,10 +11,9 @@ class CIFaceDetection {
         detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: accuracy)!
     }
     
+    // 顔検出
     func detectFace(ciInput: CIImage, imageView: UIImageView) {
-        
         let featureArray = detector.features(in: ciInput)
-        
         if featureArray.count == 0 { print("No faces was detected."); return }
         
         for feature in featureArray {
