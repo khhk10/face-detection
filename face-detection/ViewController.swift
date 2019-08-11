@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let inputImage = UIImage(named: "nasa.jpg")!
+        let inputImage = UIImage(named: "lena.png")!
         print("lena size : \(inputImage.size)")
         imageView.image = inputImage
         print("imageView size : \(imageView.bounds.size)")

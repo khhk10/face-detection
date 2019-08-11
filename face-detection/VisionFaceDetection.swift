@@ -6,10 +6,14 @@ class VisionFaceDetection {
     // 顔検出
     func visionFaceDetection(cgInput: CGImage?, ciInput: CIImage, imageView: UIImageView) {
         // リクエストを生成
-        let request = VNDetectFaceRectanglesRequest { (request, error) in
+        let request = VNDetectFaceLandmarksRequest { (request, error) in
             // 処理完了後の処理
             for observation in request.results as! [VNFaceObservation] {
                 print("\(observation)")
+                if let landmarks = observation.landmarks {
+                    // ランドマーク描画
+                    self.drawLandmarks(landmarks: landmarks, ciImage: ciInput, imageView: imageView)
+                }
                 // 結果を描画
                 self.drawFaceRectangle(observation: observation, ciImage: ciInput, imageView: imageView)
             }
@@ -67,6 +71,66 @@ class VisionFaceDetection {
         path.fill()
         
         // UIImage生成
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        return image
+    }
+    
+    func drawLandmarks(landmarks: VNFaceLandmarks2D, ciImage: CIImage, imageView: UIImageView) {
+        // CIImageサイズ -> UIImageViewのサイズ
+        let scale = imageView.frame.width / ciImage.extent.size.width
+        
+        // 左目
+        if let leftEye = landmarks.leftEye {
+            for p in leftEye.pointsInImage(imageSize: ciImage.extent.size) {
+                var point = p
+                print("leftEye: \(point)")
+                
+                // 元画像のスケールに合わせる
+                point.x = point.x * scale
+                // point.y = ciImage.extent.size.height * point.y
+                // y座標を反転
+                point.y = ciImage.extent.size.height - point.y
+                point.y = point.y * scale
+                
+                let leftImage = drawCircle(size: CGSize(width: 2, height: 2))!
+                let leftImageView = UIImageView(image: leftImage)
+                leftImageView.frame.origin = CGPoint(x: point.x - leftImage.size.width/2, y: point.y - leftImage.size.height/2)
+                imageView.addSubview(leftImageView)
+            }
+        }
+        // 右目
+        if let rightEye = landmarks.rightEye {
+            for p in rightEye.pointsInImage(imageSize: ciImage.extent.size) {
+                var point = p
+                print("rightEye: \(point)")
+                
+                // 元画像のスケールに合わせる
+                point.x = point.x * scale
+                // point.y = ciImage.extent.size.height * point.y
+                // y座標を反転
+                point.y = ciImage.extent.size.height - point.y
+                point.y = point.y * scale
+                
+                let rightImage = drawCircle(size: CGSize(width: 2, height: 2))!
+                let rightImageView = UIImageView(image: rightImage)
+                rightImageView.frame.origin = CGPoint(x: point.x - rightImage.size.width/2, y: point.y + rightImage.size.height/2)
+                imageView.addSubview(rightImageView)
+            }
+        }
+    }
+    
+    // 特徴点を描画
+    func drawCircle(size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, 1.0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        let circleRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        let path = UIBezierPath(ovalIn: circleRect)
+        context?.setFillColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.1)
+        context?.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        path.stroke()
+        path.fill()
+        
         let image = UIGraphicsGetImageFromCurrentImageContext()
         return image
     }
