@@ -12,7 +12,7 @@ Left: high accuracy,  Right: low accuracy
 
 <img src="https://github.com/khhk10/face-detection/blob/master/images/lena_high.png" height="220"> <img src="https://github.com/khhk10/face-detection/blob/master/images/lena_low.png" height="220">
 
-### Vision
+### Vision framework
 VNFaceObservation
 - bounding box
 - landmarks
