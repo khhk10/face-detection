@@ -5,8 +5,7 @@ Introduction to face detection
 ### CIDetector - CIDetectorTypeFace
 CIFaceFeature
 - face bounds
-- left eye position
-- right eye position
+- left and right eye positions
 - mouth position
 
 Left: high accuracy,  Right: low accuracy
