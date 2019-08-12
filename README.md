@@ -15,11 +15,11 @@ Left: high accuracy,  Right: low accuracy
 
 ### Vision
 VNFaceObservation
+- bounding box
 - landmarks
-- CNFaceLandmarks2D
-- VNFaceLandmarkRegion2D
-- VNFaceLandmarks
-- VNFaceLandmarkResion
+  - eyes, eyebrows, nose, inner and outer lips, face contour
+
+<img src="https://github.com/khhk10/face-detection/blob/master/images/lena_landmarks.png" height="220">
 
 ## reference
 
