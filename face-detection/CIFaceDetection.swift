@@ -6,7 +6,7 @@ class CIFaceDetection {
     let accuracy: [String : String]
     let detector: CIDetector
     
-    init() {
+    init(vc: ViewController) {
         accuracy = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
         detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: accuracy)!
     }

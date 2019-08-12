@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let inputImage = UIImage(named: "lena.png")!
+        let inputImage = UIImage(named: "nasa.jpg")!
         print("lena size : \(inputImage.size)")
         imageView.image = inputImage
         print("imageView size : \(imageView.bounds.size)")
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         // ciFaceDetection.detectFace(ciInput: ciInput, imageView: imageView)
         
         // 顔検出 Vision
-        let vFaceDetector = VisionFaceDetection()
+        let vFaceDetector = VisionFaceDetection(vc: self)
         vFaceDetector.visionFaceDetection(cgInput: inputImage.cgImage, ciInput: ciInput, imageView: self.imageView)
     }
 }
