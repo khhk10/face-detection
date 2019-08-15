@@ -3,14 +3,18 @@ import AVFoundation
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
-    var session = AVCaptureSession()
-    
     @IBOutlet weak var cameraView: UIView!
+
+    var session = AVCaptureSession()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // カメラ設定
         setting()
+        // プレビュー
+        setPreview()
+        // セッション開始
+        session.startRunning()
     }
     
     // カメラの設定
@@ -30,9 +34,19 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         // session.sessionPreset = .photo
         session.addOutput(photoOutput)
         session.commitConfiguration() // 設定更新
-        
-        // プレビュー
-        
     }
+    
+    // プレビューの設定
+    func setPreview() {
+        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        previewLayer.frame = cameraView.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        previewLayer.masksToBounds = true
+        cameraView.layer.addSublayer(previewLayer)
+    }
+    
+    @IBAction func changeCamera(_ sender: UIButton) {
+    }
+    
 
 }

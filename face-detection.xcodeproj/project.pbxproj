@@ -19,7 +19,6 @@
 		55588E8322F5ECA100B9ABFB /* lena_gray.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55588E8222F5ECA000B9ABFB /* lena_gray.gif */; };
 		55588E8522F5EE2B00B9ABFB /* grayscale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55588E8422F5EE2B00B9ABFB /* grayscale.jpg */; };
 		55588E8F22F6092A00B9ABFB /* obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55588E8E22F6092A00B9ABFB /* obama.jpg */; };
-		55588E9122F60E0900B9ABFB /* ikeda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55588E9022F60E0900B9ABFB /* ikeda.jpg */; };
 		55588E9322F60F6F00B9ABFB /* yoshioka.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55588E9222F60F6F00B9ABFB /* yoshioka.jpg */; };
 		55588E9522F6105100B9ABFB /* yoshioka2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55588E9422F6105100B9ABFB /* yoshioka2.jpg */; };
 		55588E9722F6114B00B9ABFB /* yoshioka3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55588E9622F6114B00B9ABFB /* yoshioka3.jpg */; };
@@ -41,7 +40,6 @@
 		55588E8222F5ECA000B9ABFB /* lena_gray.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lena_gray.gif; sourceTree = "<group>"; };
 		55588E8422F5EE2B00B9ABFB /* grayscale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grayscale.jpg; sourceTree = "<group>"; };
 		55588E8E22F6092A00B9ABFB /* obama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = obama.jpg; sourceTree = "<group>"; };
-		55588E9022F60E0900B9ABFB /* ikeda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ikeda.jpg; sourceTree = "<group>"; };
 		55588E9222F60F6F00B9ABFB /* yoshioka.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoshioka.jpg; sourceTree = "<group>"; };
 		55588E9422F6105100B9ABFB /* yoshioka2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoshioka2.jpg; sourceTree = "<group>"; };
 		55588E9622F6114B00B9ABFB /* yoshioka3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoshioka3.jpg; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				55588E9622F6114B00B9ABFB /* yoshioka3.jpg */,
 				55588E7222F5DA2100B9ABFB /* Main.storyboard */,
 				55588E8E22F6092A00B9ABFB /* obama.jpg */,
-				55588E9022F60E0900B9ABFB /* ikeda.jpg */,
 				55588E7522F5DA2500B9ABFB /* Assets.xcassets */,
 				55588E7722F5DA2500B9ABFB /* LaunchScreen.storyboard */,
 				55588E7A22F5DA2500B9ABFB /* Info.plist */,
@@ -177,7 +174,6 @@
 				55588E9522F6105100B9ABFB /* yoshioka2.jpg in Resources */,
 				55588E8322F5ECA100B9ABFB /* lena_gray.gif in Resources */,
 				55588E8122F5DB0E00B9ABFB /* lena.png in Resources */,
-				55588E9122F60E0900B9ABFB /* ikeda.jpg in Resources */,
 				55588E9B22F6B5CD00B9ABFB /* nasa.jpg in Resources */,
 				55588E8522F5EE2B00B9ABFB /* grayscale.jpg in Resources */,
 			);
