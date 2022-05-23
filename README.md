@@ -1,6 +1,6 @@
 # face-detection
 
-Introduction to face detection 
+Introduces two methods of face detection using CIDetector and Vision framework
 
 ## 1. CIDetector - CIDetectorTypeFace
 CIFaceFeature
